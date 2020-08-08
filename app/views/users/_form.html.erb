@@ -1,39 +1,39 @@
-<%= stylesheet_link_tag 'login', media: 'all' %>
+<%= stylesheet_link_tag 'users', media: 'all' %>
 
 <%= form_with(model: user, local: true) do |form| %>
   <% if user.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(user.errors.count, "error") %> prohibited this user from being saved:</h2>
-
-      <ul>
+      <ul class="text-center d-flex flex-column p-0">
       <% user.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
+        <li class="list-item text-danger"><%= message %></li>
       <% end %>
       </ul>
     </div>
   <% end %>
 
-  <div class="field">
+  <h3 class="form-title text-light mb-4 mt-3">Register</h3>
+
+  <div class="field text-light">
     <%= form.label :name %>
     <%= form.text_field :name %>
   </div>
 
-  <div class="field">
+  <div class="field text-light">
     <%= form.label :username %>
     <%= form.text_field :username %>
   </div>
 
-  <div class="field">
+  <div class="field text-light">
     <%= form.label :password %>
     <%= form.text_field :password %>
   </div>
 
-  <div class="field">
+  <div class="field text-light">
     <%= form.label :password_confirmation %>
     <%= form.text_field :password_confirmation %>
   </div>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit 'Sign Up', class:'button text-uppercase'%>
   </div>
 <% end %>
