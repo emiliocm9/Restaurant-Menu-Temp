@@ -10,10 +10,19 @@
   <%= @user.username %>
 </p>
 
-<p>
-  <strong>Password digest:</strong>
-  <%= @user.password_digest %>
-</p>
+<% @menus.each do |pala|%>
+  <% if pala.desert.attached? %>
+    <div class="container-fluid">
+      <img src="<%=(url_for(pala.desert))%>" class="image">
+    </div>
+  <% end %>
+  <% if pala.breakfast.attached? %>
+    <div class="container-fluid">
+      <img src="<%=(url_for(pala.breakfast))%>" class="image">
+    </div>
+  <% end %>
+  <%= link_to 'Edit Photos', edit_menu_path(pala) %>
+<% end %>
 
-<%= link_to 'Edit', edit_user_path(@user) %> |
+<%= link_to 'Edit', edit_user_path(@user) %>
 <%= link_to 'Back', users_path %>

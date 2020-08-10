@@ -51,9 +51,6 @@
       <img src="<%=(url_for(user.desert))%>" class="image">
     </div>
   <% end %>
-<% end %>
-
-<% @menus.each do |user|%>
   <% if user.breakfast.attached? %>
     <div class="container-fluid">
       <img src="<%=(url_for(user.breakfast))%>" class="image">
