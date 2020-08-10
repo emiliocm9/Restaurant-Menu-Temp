@@ -45,7 +45,21 @@
 
 
 
+<% @menus.each do |user|%>
+  <% if user.desert.attached? %>
+    <div class="container-fluid">
+      <img src="<%=(url_for(user.desert))%>" class="image">
+    </div>
+  <% end %>
+<% end %>
 
+<% @menus.each do |user|%>
+  <% if user.breakfast.attached? %>
+    <div class="container-fluid">
+      <img src="<%=(url_for(user.breakfast))%>" class="image">
+    </div>
+  <% end %>
+<% end %>
 
 <p id="notice"><%= notice %></p>
 
@@ -80,3 +94,5 @@
 <%= link_to 'New User', new_user_path %>
 <br>
 <%= link_to 'cambiar menú', login_path , class: 'link text-uppercase anchor_b' %>
+<br>
+<%= link_to 'Poner fotos al menu', new_menu_path %>
