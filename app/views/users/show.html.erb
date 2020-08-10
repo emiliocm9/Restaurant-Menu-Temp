@@ -1,5 +1,36 @@
 <p id="notice"><%= notice %></p>
 
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cookie&display=swap');
+</style> 
+
+<div class="container-fluid d-flex justify-content-center align-items-center mt-3 mb-3">
+  <h1 class="jumbotronh1" aria-label="A pen by Michiel Bijl" data-label="Dear User">
+    <span aria-label="Wel"></span>
+    <span aria-label="come"></span>
+  </h1>
+</div>
+
+<div class="menu-show container-fluid d-flex flex-column align-items-center justify-content-center text-center">
+  <div class="username-container d-flex align-items-center">
+    <h3 class="mt-2 mb-2 text-light"><%= @user.name %></h3>
+  </div>
+  <% @menus.each do |user|%>
+    <% if user.desert.attached? %>
+      <div class="container-fluid mb-3">
+        <h5 class="menu-class">Deserts</h5>
+        <img src="<%=(url_for(user.desert))%>" class="image-menu">
+      </div>
+    <% end %>
+    <% if user.breakfast.attached? %>
+      <div class="container-fluid mb-5">
+        <h5 class="menu-class">Breakfast</h5>
+        <img src="<%=(url_for(user.breakfast))%>" class="image-menu">
+      </div>
+    <% end %>
+    <%= link_to 'EDIT MENU', edit_menu_path(user), class:'text-light menu-link text-uppercase mb-5' %>
+  <% end %>
+</div>
 <p>
   <strong>Name:</strong>
   <%= @user.name %>
