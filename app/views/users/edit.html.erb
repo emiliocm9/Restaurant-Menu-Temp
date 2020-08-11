@@ -1,6 +1,11 @@
-<h1>Editing User</h1>
+<div class="container-fluid d-flex justify-content-center mt-lg-5 mt-1">
+  <h1 aria-label="A pen by Michiel Bijl" data-label="User">
+    <span aria-label="Ed"></span>
+    <span aria-label="it"></span>
+  </h1>
+</div>
 
-<%= render 'form', user: @user %>
+<%= render 'form_edit', user: @user %>
 
 <%= link_to 'Show', @user %> |
 <%= link_to 'Back', users_path %>
