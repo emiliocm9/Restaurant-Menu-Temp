@@ -134,6 +134,20 @@
   margin-top: 10px;
 }
 
+.button-final {
+  padding: 19px 39px 18px 39px;
+  color: black;
+  background-color: white;
+  font-size: 18px;
+  text-align: center;
+  font-style: normal;
+  border-radius: 15px;
+  width: 50%;
+  border: 0;
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+
 .menu-class {
   font-family: 'Cookie', cursive;
   color: white;
@@ -167,5 +181,9 @@
     width: 100%;
     margin-bottom: 30px;
     margin-top: 15px;
+  }
+
+  .button-final {
+    width: 100%;
   }
 }

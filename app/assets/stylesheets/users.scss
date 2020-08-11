@@ -68,6 +68,8 @@ select {
   margin-bottom: 10px;
   margin-top: 10px;
 }
+
+
 // This is the style for the title
 
 h1 {
@@ -197,6 +199,10 @@ h1::after {
 
   h1 {
     margin-bottom: 10px;
+  }
+
+  .button-final {
+    width: 100%;
   }
 
 }
