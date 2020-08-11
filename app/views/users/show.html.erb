@@ -15,45 +15,62 @@
   <div class="username-container d-flex align-items-center">
     <h3 class="mt-2 mb-2 text-light"><%= @user.name %></h3>
   </div>
-  <% @menus.each do |user|%>
-    <% if user.desert.attached? %>
-      <div class="container-fluid mb-3">
-        <h5 class="menu-class">Deserts</h5>
-        <img src="<%=(url_for(user.desert))%>" class="image-menu">
+  <% @menus.each do |menu|%>
+    <%= form_for menu do |f| %>
+      <% if menu.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(menu.errors.count, "error") %> prohibited this menu from being saved:</h2>
+  
+          <ul>
+          <% menu.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+          </ul>
+        </div>
+      <% end %>
+  
+      <% if menu.desert.attached? %>
+        <div class="container-fluid d-flex flex-column align-items-center flex-lg-row mb-3">
+          <div class="form-container">
+            <div class="">
+              <h5 class="menu-class">Deserts</h5>
+              <img src="<%=(url_for(menu.desert))%>" class="image-menu">
+            </div>
+          </div>
+          <div class="form-container-file">
+            <div class="field mx-auto">
+              <%= f.label :desert %><br>
+              <%= f.file_field :desert, class:'button text-uppercase' %>
+            </div>
+          </div>
+        </div>
+      <% end %>
+  
+      <% if menu.breakfast.attached? %>
+        <div class="container-fluid d-flex flex-column align-items-center flex-lg-row mb-3">
+          <div class="form-container">
+            <div class="">
+              <h5 class="menu-class">Breakfast</h5>
+              <img src="<%=(url_for(menu.breakfast))%>" class="image-menu">
+            </div>
+          </div>
+          <div class="form-container-file">
+            <div class="field mx-auto">
+              <%= f.label :breakfast %><br>
+              <%= f.file_field :breakfast, class:'button text-uppercase' %>
+            </div>
+          </div>
+        </div>
+      <% end %>
+  
+      <div class="actions">
+        <%= f.submit 'Aceptar cambios' %>
       </div>
+      <%= link_to 'EDIT MENU', edit_menu_path(menu), class:'text-light menu-link text-uppercase mb-5' %>
     <% end %>
-    <% if user.breakfast.attached? %>
-      <div class="container-fluid mb-5">
-        <h5 class="menu-class">Breakfast</h5>
-        <img src="<%=(url_for(user.breakfast))%>" class="image-menu">
-      </div>
-    <% end %>
-    <%= link_to 'EDIT MENU', edit_menu_path(user), class:'text-light menu-link text-uppercase mb-5' %>
   <% end %>
 </div>
-<p>
-  <strong>Name:</strong>
-  <%= @user.name %>
-</p>
 
-<p>
-  <strong>Username:</strong>
-  <%= @user.username %>
-</p>
-
-<% @menus.each do |pala|%>
-  <% if pala.desert.attached? %>
-    <div class="container-fluid">
-      <img src="<%=(url_for(pala.desert))%>" class="image">
-    </div>
-  <% end %>
-  <% if pala.breakfast.attached? %>
-    <div class="container-fluid">
-      <img src="<%=(url_for(pala.breakfast))%>" class="image">
-    </div>
-  <% end %>
-  <%= link_to 'Edit Photos', edit_menu_path(pala) %>
-<% end %>
 
 <%= link_to 'Edit', edit_user_path(@user) %>
 <%= link_to 'Back', users_path %>

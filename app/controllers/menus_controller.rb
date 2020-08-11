@@ -31,7 +31,7 @@ class MenusController < ApplicationController
         format.html { redirect_to root_path, notice: 'Menu was successfully created.' }
         format.json { render root_path, status: :created, location: @menu }
       else
-        format.html { render :new }
+        format.html { render 'users#show' }
         format.json { render json: @menu.errors, status: :unprocessable_entity }
       end
     end
