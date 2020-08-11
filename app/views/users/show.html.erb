@@ -4,11 +4,30 @@
 @import url('https://fonts.googleapis.com/css2?family=Cookie&display=swap');
 </style> 
 
-<div class="container-fluid d-flex justify-content-center align-items-center mt-3 mb-3">
-  <h1 class="jumbotronh1" aria-label="A pen by Michiel Bijl" data-label="Dear User">
-    <span aria-label="Wel"></span>
-    <span aria-label="come"></span>
-  </h1>
+<nav class="container-fluid d-md-none">
+  <div class="row">
+    <div class="col-6 text-center text-upperase text-info">
+      <%= link_to 'Logout', logout_path, method: :delete, class:"text-upperase text-info" %>
+    </div>
+    <div class="col-6 text-center text-upperase text-info">
+      <%= link_to 'Edit user', edit_user_path(@user), class:"text-upperase text-info" %>
+    </div>
+  </div>
+</nav>
+
+<div class="container-fluid jumbo-pack d-flex justify-content-center mt-3 mb-3">
+    <div class="jumbotronh0 d-none d-md-block">
+      <%= link_to 'Logout', logout_path, method: :delete, class:"link-user" %>
+    </div>
+    <div class="jumbotronh11">
+      <h1 class="jumbotronh1" aria-label="A pen by Michiel Bijl" data-label="Dear User">
+        <span aria-label="Wel"></span>
+        <span aria-label="come"></span>
+      </h1>
+    </div>
+    <div class="jumbotronh2 d-none d-md-block">
+      <%= link_to 'Edit user', edit_user_path(@user), class:"link-user1" %>
+    </div>
 </div>
 
 <div class="menu-show container-fluid d-flex flex-column align-items-center justify-content-center text-center">
@@ -69,7 +88,3 @@
     <% end %>
   <% end %>
 </div>
-
-
-<%= link_to 'Edit', edit_user_path(@user) %>
-<%= link_to 'Back', users_path %>

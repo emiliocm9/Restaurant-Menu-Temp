@@ -14,8 +14,60 @@
 
  @import "bootstrap";
 
+  .jumbo-pack {
+    //background-image: url("https://images.unsplash.com/photo-1578598459159-f6ae2f208ca9?ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80");
+    //background-size: cover;
+    //opacity: 0.7;
+    border-top: 5px solid #17a2b8;
+    padding-top: 20px;
+    border-bottom: 5px solid #17a2b8;
+  }
+  
+  .jumbotron {
+      // background-image: url("https://images.pexels.com/photos/274192/pexels-photo-274192.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260");
+  // background-size: cover;
+  background: black;
+  opacity: 0.7;
+  }
+
+  .jumbotronh0,
+  .jumbotronh2 {
+    flex: 1;
+    position: relative;
+  }
+
+  .link-user {
+    text-transform: uppercase;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    position: absolute;
+    left: 0;
+    top:0;
+    color: black;
+  }
+
+  .link-user:hover,
+  .link-user1:hover {
+    color:#dc3545;
+    text-decoration: none;
+  }
+
+  .link-user1 {
+    text-transform: uppercase;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    position: absolute;
+    right: 0;
+    top: 0;
+    color: black;
+  }
+
  .jumbotronh1 {
   margin: 0 0 30px 0;
+  text-align: center;
+}
+
+.jumbotronh11 {
+  flex: 8;
+  justify-content: center;
   text-align: center;
 }
 
