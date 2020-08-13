@@ -1,4 +1,4 @@
-<p id="notice"><%= notice %></p>
+<p id="notice" class="text-uppercase text-success text-center bg-grey"><%= notice %></p>
 
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Cookie&display=swap');
@@ -52,14 +52,14 @@
           <div class="form-container">
             <div class="">
             <% if menu.desert.attached? %>
-              <h5 class="menu-class">Deserts</h5>
+              <h5 class="menu-class">Postres</h5>
               <img src="<%=(url_for(menu.desert))%>" class="image-menu">
             <% end %>
             </div>
           </div>
           <div class="form-container-file">
             <div class="field mx-auto">
-              <%= f.label :desert %><br>
+              <%= f.label :desert, class:'text-light text-uppercase' %><br>
               <%= f.file_field :desert, class:'button text-uppercase' %>
             </div>
           </div>
@@ -76,7 +76,7 @@
           </div>
           <div class="form-container-file">
             <div class="field mx-auto">
-              <%= f.label :breakfast %><br>
+              <%= f.label :breakfast, class:'text-light text-uppercase' %><br>
               <%= f.file_field :breakfast, class:'button text-uppercase' %>
             </div>
           </div>
@@ -86,14 +86,14 @@
           <div class="form-container">
             <div class="">
             <% if menu.comida.attached? %>
-              <h5 class="menu-class">Breakfast</h5>
+              <h5 class="menu-class">Comida</h5>
               <img src="<%=(url_for(menu.comida))%>" class="image-menu">
             <% end %>
             </div>
           </div>
           <div class="form-container-file">
             <div class="field mx-auto">
-              <%= f.label :comida %><br>
+              <%= f.label :comida, class:'text-light text-uppercase' %><br>
               <%= f.file_field :comida, class:'button text-uppercase' %>
             </div>
           </div>
@@ -103,14 +103,14 @@
           <div class="form-container">
             <div class="">
             <% if menu.bebida.attached? %>
-              <h5 class="menu-class">Breakfast</h5>
+              <h5 class="menu-class">Bebida</h5>
               <img src="<%=(url_for(menu.bebida))%>" class="image-menu">
             <% end %>
             </div>
           </div>
           <div class="form-container-file">
             <div class="field mx-auto">
-              <%= f.label :bebida %><br>
+              <%= f.label :bebida, class:'text-light text-uppercase' %><br>
               <%= f.file_field :bebida, class:'button text-uppercase' %>
             </div>
           </div>
@@ -120,14 +120,14 @@
           <div class="form-container">
             <div class="">
             <% if menu.llevar.attached? %>
-              <h5 class="menu-class">Breakfast</h5>
+              <h5 class="menu-class">Comida para llevar</h5>
               <img src="<%=(url_for(menu.llevar))%>" class="image-menu">
             <% end %>
             </div>
           </div>
           <div class="form-container-file">
             <div class="field mx-auto">
-              <%= f.label :llevar %><br>
+              <%= f.label :llevar, class:'text-light text-uppercase' %><br>
               <%= f.file_field :llevar, class:'button text-uppercase' %>
             </div>
           </div>
@@ -137,14 +137,14 @@
           <div class="form-container">
             <div class="">
             <% if menu.cena.attached? %>
-              <h5 class="menu-class">Breakfast</h5>
+              <h5 class="menu-class">Cena</h5>
               <img src="<%=(url_for(menu.cena))%>" class="image-menu">
             <% end %>
             </div>
           </div>
           <div class="form-container-file">
             <div class="field mx-auto">
-              <%= f.label :cena %><br>
+              <%= f.label :cena, class:'text-light text-uppercase' %><br>
               <%= f.file_field :cena, class:'button text-uppercase' %>
             </div>
           </div>

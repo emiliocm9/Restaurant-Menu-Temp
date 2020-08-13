@@ -14,7 +14,7 @@ class ApplicationController < ActionController::Base
   def logged_in_user
     unless logged_in?
       redirect_to root_path
-      flash[:danger] = "Please Log In or Sign Up."
+      flash[:danger] = "Please log in or create a new user."
     end
   end
 end
