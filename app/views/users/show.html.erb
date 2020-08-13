@@ -48,12 +48,13 @@
         </div>
       <% end %>
   
-      <% if menu.desert.attached? %>
         <div class="container-fluid d-flex flex-column align-items-center flex-lg-row mb-3">
           <div class="form-container">
             <div class="">
+            <% if menu.desert.attached? %>
               <h5 class="menu-class">Deserts</h5>
               <img src="<%=(url_for(menu.desert))%>" class="image-menu">
+            <% end %>
             </div>
           </div>
           <div class="form-container-file">
@@ -63,14 +64,14 @@
             </div>
           </div>
         </div>
-      <% end %>
   
-      <% if menu.breakfast.attached? %>
         <div class="container-fluid d-flex flex-column align-items-center flex-lg-row mb-3">
           <div class="form-container">
             <div class="">
+            <% if menu.breakfast.attached? %>
               <h5 class="menu-class">Breakfast</h5>
               <img src="<%=(url_for(menu.breakfast))%>" class="image-menu">
+            <% end %>
             </div>
           </div>
           <div class="form-container-file">
@@ -80,7 +81,74 @@
             </div>
           </div>
         </div>
-      <% end %>
+
+        <div class="container-fluid d-flex flex-column align-items-center flex-lg-row mb-3">
+          <div class="form-container">
+            <div class="">
+            <% if menu.comida.attached? %>
+              <h5 class="menu-class">Breakfast</h5>
+              <img src="<%=(url_for(menu.comida))%>" class="image-menu">
+            <% end %>
+            </div>
+          </div>
+          <div class="form-container-file">
+            <div class="field mx-auto">
+              <%= f.label :comida %><br>
+              <%= f.file_field :comida, class:'button text-uppercase' %>
+            </div>
+          </div>
+        </div>
+
+        <div class="container-fluid d-flex flex-column align-items-center flex-lg-row mb-3">
+          <div class="form-container">
+            <div class="">
+            <% if menu.bebida.attached? %>
+              <h5 class="menu-class">Breakfast</h5>
+              <img src="<%=(url_for(menu.bebida))%>" class="image-menu">
+            <% end %>
+            </div>
+          </div>
+          <div class="form-container-file">
+            <div class="field mx-auto">
+              <%= f.label :bebida %><br>
+              <%= f.file_field :bebida, class:'button text-uppercase' %>
+            </div>
+          </div>
+        </div>
+
+        <div class="container-fluid d-flex flex-column align-items-center flex-lg-row mb-3">
+          <div class="form-container">
+            <div class="">
+            <% if menu.llevar.attached? %>
+              <h5 class="menu-class">Breakfast</h5>
+              <img src="<%=(url_for(menu.llevar))%>" class="image-menu">
+            <% end %>
+            </div>
+          </div>
+          <div class="form-container-file">
+            <div class="field mx-auto">
+              <%= f.label :llevar %><br>
+              <%= f.file_field :llevar, class:'button text-uppercase' %>
+            </div>
+          </div>
+        </div>
+
+        <div class="container-fluid d-flex flex-column align-items-center flex-lg-row mb-3">
+          <div class="form-container">
+            <div class="">
+            <% if menu.cena.attached? %>
+              <h5 class="menu-class">Breakfast</h5>
+              <img src="<%=(url_for(menu.cena))%>" class="image-menu">
+            <% end %>
+            </div>
+          </div>
+          <div class="form-container-file">
+            <div class="field mx-auto">
+              <%= f.label :cena %><br>
+              <%= f.file_field :cena, class:'button text-uppercase' %>
+            </div>
+          </div>
+        </div>
   
       <div class="actions">
         <%= f.submit 'Aceptar cambios', class:'button-final text-uppercase' %>

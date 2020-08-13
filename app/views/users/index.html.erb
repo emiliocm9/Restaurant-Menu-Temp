@@ -2,7 +2,7 @@
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Cookie&display=swap');
 </style> 
-<p id="notice" class="text-uppercase text-success"><%= notice %></p>
+<p id="notice" class="text-uppercase text-success text-center bg-grey"><%= notice %></p>
 
 <header class="header-container container-fluid bg-light d-flex justify-content-center">
   <div class="logo-container">
@@ -24,83 +24,109 @@
   </section>
 </div>
 
+<%# Aquí empieza la galería de menú %>
+<% @menus.each do |p|%>
+
 <div class="wrapper1">
 
-  <h1 class="contenth1">Featured Articles</h1>
-<h2 class="contenth2">All their equipment and instruments are alive.</h2>
+<% if p.desert.attached? || p.breakfast.attached? %>
+  <h1 class="contenth1">Desayunos y Postres</h1>
+<h2 class="contenth2">Comienza el día con el mejor ánimo.</h2>
+<% end %>
 
 <div class="blocks">
+
+<% if p.desert.attached? %>
   <div class="block">
-    <img src="http://15zine.cubellthemes.com/wp-content/uploads/2015/03/15zine-v3-4-360x490.jpg" alt="" />
+    <img src="<%=(url_for(p.desert))%>" class="image">
+    <% if false %>
     <div class="info">
       <div class="title">Lorem ipsum dolor.</div>
       <div class="date">APRIL 3, 2015</div>
     </div>
+    <% end %>
   </div>
+<%end%>
+
+<% if p.breakfast.attached? %>
   <div class="block">
-    <img src="http://15zine.cubellthemes.com/wp-content/uploads/2015/02/15zine-v3-11-360x490.jpg" alt="" />
+    <img src="<%=(url_for(p.breakfast))%>" class="image">
+    <% if false %>
     <div class="info">
       <div class="title">Lorem ipsum dolor sit.</div>
       <div class="date">MARCH 7, 2015</div>
     </div>
+    <% end %>
   </div>
+<%end%>
 </div>
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Username</th>
-      <th>Password digest</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
 
-  <tbody>
-    <% @users.each do |user| %>
-      <tr>
-        <td><%= user.name %></td>
-        <td><%= user.username %></td>
-        <td><%= link_to 'Show', user %></td>
-        <td><%= link_to 'Edit', edit_user_path(user) %></td>
-        <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+<div class="wrapper1">
+
+<% if p.llevar.attached? || p.comida.attached? %>
+  <h1 class="contenth1">Para llevar y Comida</h1>
+<h2 class="contenth2">Comienza el día con el mejor ánimo.</h2>
+<% end %>
+
+<div class="blocks">
+<% if p.comida.attached? %>
+  <div class="block">
+    <img src="<%=(url_for(p.comida))%>" class="image">
+    <% if false %>
+    <div class="info">
+      <div class="title">Lorem ipsum dolor.</div>
+      <div class="date">APRIL 3, 2015</div>
+    </div>
     <% end %>
-  </tbody>
-</table>
+  </div>
+<%end%>
 
-<br>
+<% if p.llevar.attached? %>
+  <div class="block">
+    <img src="<%=(url_for(p.llevar))%>" class="image">
+    <% if false %>
+    <div class="info">
+      <div class="title">Lorem ipsum dolor sit.</div>
+      <div class="date">MARCH 7, 2015</div>
+    </div>
+    <% end %>
+  </div>
+<%end%>
+</div>
 
-<%# Here is the new gallery %>
-<% @menus.each do |p|%>
-  <% if p.desert.attached? %>
-<div class="container-fluid">
-  <div class="row">
-    <div class="col-12 col-md-6">
-      <div class="product-desc w-100 d-flex flex-column align-items-center">
-        <img src="<%=(url_for(p.desert))%>" class="image">
-        <h1>Deserts</h1>
-      </div>
+<div class="wrapper1">
+
+<% if p.bebida.attached? || p.cena.attached? %>
+  <h1 class="contenth1">Cena y Bebida</h1>
+<h2 class="contenth2">Comienza el día con el mejor ánimo.</h2>
+<% end %>
+
+<div class="blocks">
+
+<% if p.bebida.attached? %>
+  <div class="block">
+    <img src="<%=(url_for(p.bebida))%>" class="image">
+    <% if false %>
+    <div class="info">
+      <div class="title">Lorem ipsum dolor.</div>
+      <div class="date">APRIL 3, 2015</div>
     </div>
-    <div class="col-12 col-md-6">
-      <div class="product-desc w-100 d-flex flex-column align-items-center">
-        <img src="<%=(url_for(p.breakfast))%>" class="image">
-        <h1>Breakfast</h1>
-      </div>
+    <% end %>
+  </div>
+<%end%>
+
+<% if p.cena.attached? %>  
+  <div class="block">
+    <img src="<%=(url_for(p.cena))%>" class="image">
+    <% if false %>
+    <div class="info">
+      <div class="title">Lorem ipsum dolor sit.</div>
+      <div class="date">MARCH 7, 2015</div>
     </div>
-    <div class="col-12 col-md-6">
-    </div>
-    <div class="col-12 col-md-6">
-    </div>
-    <div class="col-12 col-md-6">
-    </div>
+    <% end %>
   </div>
 </div>
 <% end %>
 <% end%>
-
-<%= link_to 'New User', new_user_path %>
 <br>
-<%= link_to 'cambiar menú', login_path , class: 'link text-uppercase anchor_b' %>
-<br>
-<%= link_to 'Poner fotos al menu', new_menu_path %>
