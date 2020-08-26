@@ -1,0 +1,36 @@
+
+<p id="alert"><%= alert %></p>
+<%= stylesheet_link_tag 'sessions', media: 'all' %>
+
+<nav class="container-fluid mt-3">
+  <div class="row">
+    <div class="col-12 text-center text-upperase text-info">
+      <%= link_to 'Home', root_path, class: 'text-uppercase text-info' %>
+    </div>
+  </div>
+</nav>
+
+<div class="container-fluid d-flex justify-content-center mt-lg-5 mt-1">
+  <h1 aria-label="A pen by Michiel Bijl" data-label="Log In">
+    <span aria-label="Me"></span>
+    <span aria-label="nu"></span>
+  </h1>
+</div>
+
+<%= form_tag sessions_path do |form| %>
+  <h3 class="form-title text-light mb-1 mt-1 mb-lg-4 mt-lg-3">Log In</h3>
+  <div class="field text-light">
+    <%= label_tag :username %> <br>
+    <%= text_field_tag :username %>
+  </div>
+
+  <div class="field text-light">
+    <%= label_tag :password %> <br>
+    <%= password_field_tag :password %>
+  </div>
+
+  <div class="actions">
+    <%= submit_tag "Login", class:'button text-uppercase' %>
+  </div>
+<% end %>
+

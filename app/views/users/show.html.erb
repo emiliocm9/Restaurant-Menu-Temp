@@ -1,0 +1,158 @@
+<p id="notice" class="text-uppercase text-success text-center bg-grey"><%= notice %></p>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cookie&display=swap');
+</style> 
+
+<nav class="container-fluid d-md-none">
+  <div class="row">
+    <div class="col-6 text-center text-upperase text-info">
+      <%= link_to 'Logout', logout_path, method: :delete, class:"text-uppercase text-info" %>
+    </div>
+    <div class="col-6 text-center text-upperase text-info">
+      <%= link_to 'Edit user', edit_user_path(@user), class:"text-uppercase text-info" %>
+    </div>
+  </div>
+</nav>
+
+<div class="container-fluid jumbo-pack d-flex justify-content-center mt-3 mb-3">
+    <div class="jumbotronh0 d-none d-md-block">
+      <%= link_to 'Logout', logout_path, method: :delete, class:"link-user" %>
+    </div>
+    <div class="jumbotronh11">
+      <h1 class="jumbotronh1" aria-label="A pen by Michiel Bijl" data-label="Dear User">
+        <span aria-label="Wel"></span>
+        <span aria-label="come"></span>
+      </h1>
+    </div>
+    <div class="jumbotronh2 d-none d-md-block">
+      <%= link_to 'Edit user', edit_user_path(@user), class:"link-user1" %>
+    </div>
+</div>
+
+<div class="menu-show container-fluid d-flex flex-column align-items-center justify-content-center text-center">
+  <div class="username-container d-flex align-items-center">
+    <h3 class="mt-2 mb-2 text-light"><%= @user.name %></h3>
+  </div>
+  <% @menus.each do |menu|%>
+    <%= form_for menu do |f| %>
+      <% if menu.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(menu.errors.count, "error") %> prohibited this menu from being saved:</h2>
+  
+          <ul>
+          <% menu.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+          </ul>
+        </div>
+      <% end %>
+  
+        <div class="container-fluid d-flex flex-column align-items-center flex-lg-row mb-3">
+          <div class="form-container">
+            <div class="">
+            <% if menu.desert.attached? %>
+              <h5 class="menu-class">Postres</h5>
+              <img src="<%=(url_for(menu.desert))%>" class="image-menu">
+            <% end %>
+            </div>
+          </div>
+          <div class="form-container-file">
+            <div class="field mx-auto">
+              <%= f.label :desert, class:'text-light text-uppercase' %><br>
+              <%= f.file_field :desert, class:'button text-uppercase' %>
+            </div>
+          </div>
+        </div>
+  
+        <div class="container-fluid d-flex flex-column align-items-center flex-lg-row mb-3">
+          <div class="form-container">
+            <div class="">
+            <% if menu.breakfast.attached? %>
+              <h5 class="menu-class">Breakfast</h5>
+              <img src="<%=(url_for(menu.breakfast))%>" class="image-menu">
+            <% end %>
+            </div>
+          </div>
+          <div class="form-container-file">
+            <div class="field mx-auto">
+              <%= f.label :breakfast, class:'text-light text-uppercase' %><br>
+              <%= f.file_field :breakfast, class:'button text-uppercase' %>
+            </div>
+          </div>
+        </div>
+
+        <div class="container-fluid d-flex flex-column align-items-center flex-lg-row mb-3">
+          <div class="form-container">
+            <div class="">
+            <% if menu.comida.attached? %>
+              <h5 class="menu-class">Comida</h5>
+              <img src="<%=(url_for(menu.comida))%>" class="image-menu">
+            <% end %>
+            </div>
+          </div>
+          <div class="form-container-file">
+            <div class="field mx-auto">
+              <%= f.label :comida, class:'text-light text-uppercase' %><br>
+              <%= f.file_field :comida, class:'button text-uppercase' %>
+            </div>
+          </div>
+        </div>
+
+        <div class="container-fluid d-flex flex-column align-items-center flex-lg-row mb-3">
+          <div class="form-container">
+            <div class="">
+            <% if menu.bebida.attached? %>
+              <h5 class="menu-class">Bebida</h5>
+              <img src="<%=(url_for(menu.bebida))%>" class="image-menu">
+            <% end %>
+            </div>
+          </div>
+          <div class="form-container-file">
+            <div class="field mx-auto">
+              <%= f.label :bebida, class:'text-light text-uppercase' %><br>
+              <%= f.file_field :bebida, class:'button text-uppercase' %>
+            </div>
+          </div>
+        </div>
+
+        <div class="container-fluid d-flex flex-column align-items-center flex-lg-row mb-3">
+          <div class="form-container">
+            <div class="">
+            <% if menu.llevar.attached? %>
+              <h5 class="menu-class">Comida para llevar</h5>
+              <img src="<%=(url_for(menu.llevar))%>" class="image-menu">
+            <% end %>
+            </div>
+          </div>
+          <div class="form-container-file">
+            <div class="field mx-auto">
+              <%= f.label :llevar, class:'text-light text-uppercase' %><br>
+              <%= f.file_field :llevar, class:'button text-uppercase' %>
+            </div>
+          </div>
+        </div>
+
+        <div class="container-fluid d-flex flex-column align-items-center flex-lg-row mb-3">
+          <div class="form-container">
+            <div class="">
+            <% if menu.cena.attached? %>
+              <h5 class="menu-class">Cena</h5>
+              <img src="<%=(url_for(menu.cena))%>" class="image-menu">
+            <% end %>
+            </div>
+          </div>
+          <div class="form-container-file">
+            <div class="field mx-auto">
+              <%= f.label :cena, class:'text-light text-uppercase' %><br>
+              <%= f.file_field :cena, class:'button text-uppercase' %>
+            </div>
+          </div>
+        </div>
+  
+      <div class="actions">
+        <%= f.submit 'Aceptar cambios', class:'button-final text-uppercase' %>
+      </div>
+    <% end %>
+  <% end %>
+</div>

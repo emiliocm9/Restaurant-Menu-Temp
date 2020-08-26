@@ -1,0 +1,23 @@
+<nav class="container-fluid mt-3">
+  <div class="row">
+    <div class="col-6 text-center text-upperase text-info">
+      <%= link_to 'Logout', logout_path, method: :delete, class:"text-uppercase text-info" %>
+    </div>
+    <div class="col-6 text-center text-upperase text-info">
+      <%= link_to 'Back', user_path(@user), class: 'text-uppercase text-info' %>
+    </div>
+  </div>
+</nav>
+
+<div class="container-fluid d-flex justify-content-center mt-lg-5 mt-1">
+  <h1 aria-label="A pen by Michiel Bijl" data-label="User">
+    <span aria-label="Ed"></span>
+    <span aria-label="it"></span>
+  </h1>
+</div>
+
+<%= render 'form_edit', user: @user %>
+
+<div class="container-fluid text-center mt-4 mb-2">
+  <%= link_to 'Delete User', @user, method: :delete, data: { confirm: 'Are you sure?' }, class: 'text-uppercase text-danger' %>
+</div>

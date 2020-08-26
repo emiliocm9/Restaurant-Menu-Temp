@@ -1,0 +1,135 @@
+<%= stylesheet_link_tag 'index', media: 'all' %>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cookie&display=swap');
+</style> 
+<p id="notice" class="text-uppercase text-success text-center bg-grey"><%= notice %></p>
+
+<header class="header-container container-fluid bg-light d-flex justify-content-center">
+  <div class="logo-container">
+    <%= link_to image_tag("https://logoipsum.com/logo/logo-5.svg"), login_path, class:"logotipo"%>
+  </div>
+</header>
+
+<div id="main-banner">
+  <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80" alt="Welcome to Resto">
+  <div class="banner-text-cont">
+    <h1>Restaurant Menu</h1>
+    <p class="text-light">Los mejores platillos, para los mejores paladares</p> 
+  </div>
+</div>
+        
+<div class="wrapper">
+  <section id="home-menu">
+    <h2>Menu</h2>
+  </section>
+</div>
+
+<%# Aquí empieza la galería de menú %>
+<% @menus.each do |p|%>
+
+<div class="wrapper1">
+
+<% if p.desert.attached? || p.breakfast.attached? %>
+  <h1 class="contenth1">Desayunos y Postres</h1>
+<h2 class="contenth2">Comienza el día con el mejor ánimo.</h2>
+<% end %>
+
+<div class="blocks">
+
+<% if p.desert.attached? %>
+  <div class="block">
+    <img src="<%=(url_for(p.desert))%>" class="image">
+    <% if false %>
+    <div class="info">
+      <div class="title">Lorem ipsum dolor.</div>
+      <div class="date">APRIL 3, 2015</div>
+    </div>
+    <% end %>
+  </div>
+<%end%>
+
+<% if p.breakfast.attached? %>
+  <div class="block">
+    <img src="<%=(url_for(p.breakfast))%>" class="image">
+    <% if false %>
+    <div class="info">
+      <div class="title">Lorem ipsum dolor sit.</div>
+      <div class="date">MARCH 7, 2015</div>
+    </div>
+    <% end %>
+  </div>
+<%end%>
+</div>
+</div>
+
+
+<div class="wrapper1">
+
+<% if p.llevar.attached? || p.comida.attached? %>
+  <h1 class="contenth1">Para llevar y Comida</h1>
+<h2 class="contenth2">Comienza el día con el mejor ánimo.</h2>
+<% end %>
+
+<div class="blocks">
+<% if p.comida.attached? %>
+  <div class="block">
+    <img src="<%=(url_for(p.comida))%>" class="image">
+    <% if false %>
+    <div class="info">
+      <div class="title">Lorem ipsum dolor.</div>
+      <div class="date">APRIL 3, 2015</div>
+    </div>
+    <% end %>
+  </div>
+<%end%>
+
+<% if p.llevar.attached? %>
+  <div class="block">
+    <img src="<%=(url_for(p.llevar))%>" class="image">
+    <% if false %>
+    <div class="info">
+      <div class="title">Lorem ipsum dolor sit.</div>
+      <div class="date">MARCH 7, 2015</div>
+    </div>
+    <% end %>
+  </div>
+<%end%>
+</div>
+</div>
+
+<div class="wrapper1">
+
+<% if p.bebida.attached? || p.cena.attached? %>
+  <h1 class="contenth1">Cena y Bebida</h1>
+<h2 class="contenth2">Comienza el día con el mejor ánimo.</h2>
+<% end %>
+
+<div class="blocks">
+
+<% if p.bebida.attached? %>
+  <div class="block">
+    <img src="<%=(url_for(p.bebida))%>" class="image">
+    <% if false %>
+    <div class="info">
+      <div class="title">Lorem ipsum dolor.</div>
+      <div class="date">APRIL 3, 2015</div>
+    </div>
+    <% end %>
+  </div>
+<%end%>
+
+<% if p.cena.attached? %>  
+  <div class="block">
+    <img src="<%=(url_for(p.cena))%>" class="image">
+    <% if false %>
+    <div class="info">
+      <div class="title">Lorem ipsum dolor sit.</div>
+      <div class="date">MARCH 7, 2015</div>
+    </div>
+    <% end %>
+  </div>
+</div>
+</div>
+<% end %>
+<% end%>
+<br>
